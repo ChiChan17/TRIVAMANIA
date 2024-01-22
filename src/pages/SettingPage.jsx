@@ -17,15 +17,20 @@ const SettingPage = () => {
     };
   return (
     <div className = 'SettingPage'>
+
         <div id='HomepageButton'>
             <Link to='/'>
                 <AwesomeButton id='homebutton' type='danger'>
                     Homepage
                 </AwesomeButton>
             </Link>
-        </div> 
-      <Category onSelectCategory={handleCategorySelect}/>
-      <Difficulty onSelectDifficulty={handleDifficultySelect}/>
+        </div>        
+
+        <div id ='DropDowns'> 
+          <Difficulty onSelectDifficulty={handleDifficultySelect}/>
+          <Category onSelectCategory={handleCategorySelect}/>
+        </div>
+
     </div>
   )
 }

@@ -1,7 +1,6 @@
 .difficulty-dropdown{
-    display: flex;
-    justify-content: space-between;
-    flex-direction: row;
-    align-items: flex-start;
+    float:right;
+    margin-right: 500px;
+    margin-top: 150px;
 }
 

@@ -1,6 +1,5 @@
 .category-dropdown{
-    display: flex;
-    justify-content: space-between;
-    flex-direction: row;
-    align-items: flex-end;
+    float:left;
+    margin-left: 500px;
+    margin-top: 150px;
 }
