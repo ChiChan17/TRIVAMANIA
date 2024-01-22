@@ -8,6 +8,10 @@ import 'react-awesome-button/dist/styles.css';
 
 function HomePage() {
 
+  const handleAnswer = (onAnswerChange) => {
+    console.log(`Answer: ${onAnswerChange}`);
+  };
+
   return (
     <div className = 'homepage'>
 
@@ -20,7 +24,7 @@ function HomePage() {
       </div>
 
       <Question/>
-      <Answer/>
+      <Answer onAnswerChange={handleAnswer}/>
     </div>
   )
 }

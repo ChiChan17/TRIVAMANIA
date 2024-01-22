@@ -3,7 +3,7 @@ import './Answer.css';
 import { AwesomeButton } from 'react-awesome-button';
 import 'react-awesome-button/dist/styles.css';
 
-const Answer = () => {
+const Answer = ( {onAnswerChange} ) => {
   const [answer, setAnswer] = useState('');
 
   const handleAnswerChange = (event) => {
@@ -13,6 +13,7 @@ const Answer = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
     document.getElementById('question').innerText = `Placeholder (User answer: ${answer || 'N/A'})`;
+    onAnswerChange(answer)
   };
 
   return (
