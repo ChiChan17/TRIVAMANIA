@@ -21,17 +21,24 @@ const Difficulty = ( {onSelectDifficulty} ) => {
   return (
     <div className="difficulty-dropdown">
       <form onSubmit={handleSubmit}>
-        <label htmlFor="difficulty">Select a Difficulty:</label>
-        <select id="difficulty" onChange={handleDifficultyChange} value={selectedDifficulty}>
-          <option value="">Select a Difficulty</option>
-          {difficuties.map((difficulty) => (
-            <option key={difficulty} value={difficulty}>
-              {difficulty}
-            </option>
-          ))}
-        </select>
-        <AwesomeButton id="submit" type = "primary">Submit</AwesomeButton>
-      </form>
+        <h2 id="difficulty-title">Select a Difficulty</h2>
+
+        <div className='select-difficulty'>
+          <select id="difficulty" onChange={handleDifficultyChange} value={selectedDifficulty}>
+            <option value="">Select a Difficulty</option>
+            {difficuties.map((difficulty) => (
+              <option key={difficulty} value={difficulty}>
+                {difficulty}
+              </option>
+            ))}
+          </select>
+        </div>
+
+        <div id="submit-difficulty">
+          <AwesomeButton id="submit" type = "primary">Submit</AwesomeButton>
+        </div>   
+           
+        </form>
     </div>
   )
 }

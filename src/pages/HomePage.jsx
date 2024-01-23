@@ -4,9 +4,10 @@ import Question from '../components/frontpage/Question'
 import { Link } from 'react-router-dom'; 
 import { AwesomeButton } from 'react-awesome-button';
 import 'react-awesome-button/dist/styles.css';
+import { GearIcon } from "@primer/octicons-react"; // custom icons
 
 
-function HomePage() {
+const HomePage = () => {
 
   const handleAnswer = (onAnswerChange) => {
     console.log(`Answer: ${onAnswerChange}`);
@@ -18,6 +19,7 @@ function HomePage() {
       <div id='button-container'>
           <Link to="/SettingPage">    
             <AwesomeButton id="settings-button" type="danger">
+              <GearIcon/>
               Settings
             </AwesomeButton>
           </Link>

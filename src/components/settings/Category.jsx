@@ -19,20 +19,29 @@ const Category = ({ onSelectCategory }) => {
   };
 
   return (
+
     <div className="category-dropdown">
       <form onSubmit={handleSubmit}>
-        <label htmlFor="category">Select a Category:</label>
-        <select id="category" onChange={handleCategoryChange} value={selectedCategory}>
-          <option value="">Select a category</option>
-          {categories.map((category) => ( //sort through options from categories array
-            <option key={category} value={category}>
-              {category}
-            </option>
-          ))}
-        </select>
-        <AwesomeButton id="submit" type = "primary">Submit</AwesomeButton>
+
+        <h2 id='category-title'>Select a Category</h2>
+        
+        <div className='category-select'>
+          <select id="category" onChange={handleCategoryChange} value={selectedCategory}>
+            <option value="">Select a category</option>
+            {categories.map((category) => ( //sort through options from categories array
+              <option key={category} value={category}>
+                {category}
+              </option>
+            ))}
+          </select>
+        </div>
+
+        <div id="submit-category">
+          <AwesomeButton id="submit" type = "primary">Submit</AwesomeButton>
+        </div>
       </form>
     </div>
+
   );
 };
 

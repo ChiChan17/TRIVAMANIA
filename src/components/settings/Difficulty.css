@@ -1,6 +1,9 @@
 .difficulty-dropdown{
     float:right;
-    margin-right: 500px;
-    margin-top: 150px;
+    margin-right: 450px;
+    margin-top: 50px;
 }
 
+#submit-difficulty{
+    margin-top: 20px;
+}

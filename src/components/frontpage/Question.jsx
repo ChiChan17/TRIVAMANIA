@@ -6,9 +6,13 @@ const Question = () => {
   const userAnswer = document.getElementById('answer-box')?.value || 'N/A';
 
   return (
-    <h1 id="question">
-      Placeholder (User answer: {userAnswer})
-    </h1>
+
+    <div id='question-body'>
+      <h1 id="question">
+        Placeholder (User answer: {userAnswer})
+      </h1>
+    </div>
+    
   );
 };
 

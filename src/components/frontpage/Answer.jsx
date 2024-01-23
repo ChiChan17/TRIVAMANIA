@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './Answer.css';
 import { AwesomeButton } from 'react-awesome-button';
 import 'react-awesome-button/dist/styles.css';
+import { TrashIcon, GearIcon } from "@primer/octicons-react"; // custom icons
 
 const Answer = ( {onAnswerChange} ) => {
   const [answer, setAnswer] = useState('');
@@ -26,9 +27,19 @@ const Answer = ( {onAnswerChange} ) => {
         onChange={handleAnswerChange}
       />
 
-      <AwesomeButton id="submit-button" type="primary">
-        Submit
-      </AwesomeButton>
+
+      <div className='submit-container'>
+        <AwesomeButton id="submit-button" type="primary">
+          Submit
+        </AwesomeButton>
+      </div>
+
+      <div className='skip-container'>
+        <AwesomeButton id="skip" type="secondary" >
+          <TrashIcon/>
+          Skip Question
+        </AwesomeButton>
+      </div>
     </form>
   );
 };
