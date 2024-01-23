@@ -19,10 +19,8 @@ const Category = ({ onSelectCategory }) => {
   };
 
   return (
-
     <div className="category-dropdown">
       <form onSubmit={handleSubmit}>
-
         <h2 id='category-title'>Select a Category</h2>
         
         <div className='category-select'>

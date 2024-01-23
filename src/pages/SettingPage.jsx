@@ -4,7 +4,7 @@ import 'react-awesome-button/dist/styles.css';
 import Category from '../components/settings/category';
 import Difficulty from '../components/settings/difficulty';
 import { HomeIcon } from "@primer/octicons-react"; // custom icons
-
+import './SettingPage.css'
 
 const SettingPage = () => {
 
@@ -17,17 +17,21 @@ const SettingPage = () => {
     };
   return (
     <div className = 'SettingPage'>
-
-        <div id='HomepageButton'>
+ 
+        <div className='HomepageButton'>       
+          
             <Link to='/'>
                 <AwesomeButton id='homebutton' type='danger'>
                     <HomeIcon/>
                     Homepage
                 </AwesomeButton>
             </Link>
+            
         </div>        
+        
+        <h1 id="title">Settings</h1>
 
-        <div id ='DropDowns'> 
+        <div className ='dropdowns'> 
           <Difficulty onSelectDifficulty={handleDifficultySelect}/>
           <Category onSelectCategory={handleCategorySelect}/>
         </div>

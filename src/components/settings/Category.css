@@ -8,3 +8,15 @@
     margin-top: 20px;
 }
 
+.category-select {
+    margin: 15px 0;
+}
+
+#category{
+    width: 200px;
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}

@@ -16,7 +16,7 @@ const HomePage = () => {
   return (
     <div className = 'homepage'>
 
-      <div id='button-container'>
+      <div className='button-container'>
           <Link to="/SettingPage">    
             <AwesomeButton id="settings-button" type="danger">
               <GearIcon/>
