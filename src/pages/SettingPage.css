@@ -2,3 +2,11 @@
     display:flex;
     justify-content: center;
 }
+
+.InfoButton{
+    display:flex;
+    position: absolute;
+    bottom: 1;
+    right: 1;
+    margin-top: 0px;
+}

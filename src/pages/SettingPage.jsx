@@ -3,6 +3,7 @@ import { AwesomeButton } from 'react-awesome-button';
 import 'react-awesome-button/dist/styles.css';
 import Category from '../components/settings/category';
 import Difficulty from '../components/settings/difficulty';
+import Info from '../components/settings/Info';
 import { HomeIcon } from "@primer/octicons-react"; // custom icons
 import './SettingPage.css'
 
@@ -27,14 +28,21 @@ const SettingPage = () => {
                 </AwesomeButton>
             </Link>
             
-        </div>        
-        
+        </div>     
+         
+        <div className='InfoButton'>
+          <Info/>
+        </div>  
+
         <h1 id="title">Settings</h1>
 
         <div className ='dropdowns'> 
           <Difficulty onSelectDifficulty={handleDifficultySelect}/>
           <Category onSelectCategory={handleCategorySelect}/>
         </div>
+
+     
+      
 
     </div>
   )
