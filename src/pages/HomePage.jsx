@@ -7,8 +7,8 @@ import { AwesomeButton } from 'react-awesome-button';
 import 'react-awesome-button/dist/styles.css';
 import { GearIcon } from "@primer/octicons-react"; // custom icons
 
-
 const HomePage = () => {
+  
 
   const handleAnswer = (onAnswerChange) => {
     console.log(`Answer: ${onAnswerChange}`);
