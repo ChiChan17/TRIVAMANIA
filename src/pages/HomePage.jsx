@@ -6,9 +6,11 @@ import { Link } from 'react-router-dom';
 import { AwesomeButton } from 'react-awesome-button';
 import 'react-awesome-button/dist/styles.css';
 import { GearIcon } from "@primer/octicons-react"; // custom icons
+import { useGlobalState } from '../GlobalState';
+
 
 const HomePage = () => {
-  
+
 
   const handleAnswer = (onAnswerChange) => {
     console.log(`Answer: ${onAnswerChange}`);
