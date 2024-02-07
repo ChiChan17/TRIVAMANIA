@@ -5,8 +5,8 @@ import './Difficulty.css'
 
 const Difficulty = ( {onSelectDifficulty} ) => {
 
-  const difficuties = ['Easy', 'Medium', 'Hard']; //categories
-  const [selectedDifficulty, setSelectedDifficulty] = useState(''); //set the categories
+  const difficuties = ['easy', 'medium', 'hard']; //categories
+  const [selectedDifficulty, setSelectedDifficulty] = useState(''); //set the categories for global
 
   const handleDifficultyChange = (event) => {
     setSelectedDifficulty(event.target.value);
