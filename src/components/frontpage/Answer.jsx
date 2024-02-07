@@ -2,13 +2,13 @@ import React, { useState } from 'react';
 import './Answer.css';
 import { AwesomeButton } from 'react-awesome-button';
 import 'react-awesome-button/dist/styles.css';
-import { useGlobalState, GlobalStateProvider } from '../../GlobalState';
+import { useGlobalState } from '../../GlobalState';
 import { ToastContainer, toast } from 'react-toastify'; 
 import 'react-toastify/dist/ReactToastify.css';
 
 
 const Answer = () => {
-  const { setUserAnswer, answer } = useGlobalState(); // Destructure global state and functions
+  const { setUserAnswer, answer, score, setScore } = useGlobalState(); // Destructure global state and functions
 
   const correctAnswer = () => toast(
     "Correct! Please press next question to proceed!"
@@ -25,6 +25,7 @@ const Answer = () => {
       console.log(userAnswer);
       if(userAnswer.toLowerCase() === answer.toLowerCase()){
         console.log("correct");
+        setScore(score + 1);
         correctAnswer();
       } else{
         incorrectAnswer();
@@ -52,6 +53,7 @@ const Answer = () => {
           pauseOnHover
         />
 
+        <p id="score">Score: {score}</p>
       </div>
 
     </form>

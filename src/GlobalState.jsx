@@ -9,6 +9,7 @@ export const GlobalStateProvider = ({ children }) => {
   const [choices, setChoices] = useState('');
   const [answer, setAnswer] = useState('');
   const [userAnswer, setUserAnswer] = useState('');
+  const [score, setScore] = useState(0);
 
 
   return (
@@ -23,7 +24,9 @@ export const GlobalStateProvider = ({ children }) => {
         answer,
         setAnswer,
         userAnswer,
-        setUserAnswer
+        setUserAnswer,
+        score,
+        setScore
       }}
     >
       {children}

@@ -3,16 +3,13 @@ import './Question.css';
 import { useGlobalState } from '../../GlobalState'; // Import global state hook
 import axios from 'axios'; // Import axios library for making API requests
 import arrayShuffle from 'array-shuffle';
-import { AwesomeButton } from 'react-awesome-button';
-import 'react-awesome-button/dist/styles.css';
-import { TrashIcon } from "@primer/octicons-react"; // custom icons
 
 const Question = () => {
   const { setGlobalCategory, setGlobalDifficulty, globalCategory, globalDifficulty, choices, setChoices, answer, setAnswer } = useGlobalState(); // Destructure global state and functions
 
   // set default category and difficulty when component mounts
   useEffect(() => {
-    setGlobalCategory('History'); // update global category
+    setGlobalCategory('Sports'); // update global category
     setGlobalDifficulty('easy'); // update global difficulty
   }, []); 
 
@@ -62,8 +59,7 @@ const Question = () => {
       </h3>
 
       <div className='next-container'>
-        <button onClick={handleSkipQuestion}>
-          <TrashIcon/>
+        <button id='skip-button' onClick={handleSkipQuestion}>
           Next Question
         </button>
       </div>
