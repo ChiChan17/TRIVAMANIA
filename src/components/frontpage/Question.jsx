@@ -8,7 +8,7 @@ const Question = () => {
 
   // set default category and difficulty when component mounts
   useEffect(() => {
-    setGlobalCategory('Sports'); // update global category
+    setGlobalCategory('History'); // update global category
     setGlobalDifficulty('easy'); // update global difficulty
   }, []); 
 
@@ -19,8 +19,8 @@ const Question = () => {
     const fetchQuestion = async () => {
       try {
         const response = await axios.get(`https://cs361-microservices-thanaphon-d7747a32c8c9.herokuapp.com/api/quiz/${globalCategory}/${globalDifficulty}`);
-        setQuestion(response.data); // update state with fetched question
-        console.log(response.data);
+        setQuestion(response.data.question); // update state with fetched question
+        //console.log(response.data);
       } catch (error) {
         console.error('Error fetching question:', error);
       }
@@ -34,7 +34,7 @@ const Question = () => {
   return (
     <div id='question-body'>
       <h1 id="question">
-        Placeholder (User answer: {userAnswer})
+        Question: {question})
       </h1>
     </div>
   );
