@@ -5,7 +5,7 @@ import axios from 'axios'; // Import axios library for making API requests
 import arrayShuffle from 'array-shuffle';
 import { AwesomeButton } from 'react-awesome-button';
 import 'react-awesome-button/dist/styles.css';
-import { TrashIcon, GearIcon } from "@primer/octicons-react"; // custom icons
+import { TrashIcon } from "@primer/octicons-react"; // custom icons
 
 const Question = () => {
   const { setGlobalCategory, setGlobalDifficulty, globalCategory, globalDifficulty, choices, setChoices, answer, setAnswer } = useGlobalState(); // Destructure global state and functions
@@ -55,19 +55,22 @@ const Question = () => {
         Question: {question}
       </h1>
 
+      
+
       <h3 id = 'answer-choices'>
         Choices: {answerChoices.join(', ')} 
       </h3>
 
       <div className='next-container'>
-        <AwesomeButton id="next" type="secondary" onPress={handleSkipQuestion}>
+        <button onClick={handleSkipQuestion}>
           <TrashIcon/>
           Next Question
-        </AwesomeButton>
+        </button>
       </div>
+
     </div>
+
   );
 };
-
 
 export default Question;
