@@ -4,6 +4,23 @@
     justify-content: center;
     align-items: center;
     margin-top: 100px;
-    font-size: 50px;
+    font-size: 45;
 }
 
+#answer-choices{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+}
+
+
+.next-container{
+    display: flex;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-top: 10px;
+    margin-right: 10px;
+}

@@ -9,11 +9,6 @@ import { GearIcon } from "@primer/octicons-react"; // custom icons
 
 const HomePage = () => {
 
-
-  const handleAnswer = (onAnswerChange) => {
-    console.log(`Answer: ${onAnswerChange}`);
-  };
-
   return (
     <div className = 'homepage'>
 
@@ -32,7 +27,7 @@ const HomePage = () => {
       </div>  
 
       <Question/>
-      <Answer onAnswerChange={handleAnswer}/>
+      <Answer/>
     </div>
   )
 }

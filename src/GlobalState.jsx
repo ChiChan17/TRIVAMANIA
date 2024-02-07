@@ -6,6 +6,10 @@ const GlobalStateContext = createContext();
 export const GlobalStateProvider = ({ children }) => {
   const [globalCategory, setGlobalCategory] = useState('');
   const [globalDifficulty, setGlobalDifficulty] = useState('');
+  const [choices, setChoices] = useState('');
+  const [answer, setAnswer] = useState('');
+  const [userAnswer, setUserAnswer] = useState('');
+
 
   return (
     <GlobalStateContext.Provider
@@ -13,7 +17,13 @@ export const GlobalStateProvider = ({ children }) => {
         globalCategory, 
         setGlobalCategory, 
         globalDifficulty, 
-        setGlobalDifficulty
+        setGlobalDifficulty,
+        choices,
+        setChoices,
+        answer,
+        setAnswer,
+        userAnswer,
+        setUserAnswer
       }}
     >
       {children}

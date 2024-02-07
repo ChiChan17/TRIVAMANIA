@@ -17,7 +17,7 @@ form{
 }
 
 
-.skip-container, .submit-container{
+.submit-container{
     display: flex;
     justify-content: center;
     align-items: center;

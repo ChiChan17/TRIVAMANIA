@@ -2,20 +2,20 @@ import React, { useState } from 'react';
 import './Answer.css';
 import { AwesomeButton } from 'react-awesome-button';
 import 'react-awesome-button/dist/styles.css';
-import { TrashIcon, GearIcon } from "@primer/octicons-react"; // custom icons
+import { useGlobalState, GlobalStateProvider } from '../../GlobalState';
 
-const Answer = ( {onAnswerChange} ) => {
-  const [answer, setAnswer] = useState('');
-
-  const handleAnswerChange = (event) => {
-    setAnswer(event.target.value);
-  };
+const Answer = () => {
+  const { userAnswer, setUserAnswer, answer, setAnswer} = useGlobalState(); // Destructure global state and functions
 
   const handleSubmit = (event) => {
-    event.preventDefault();
-    document.getElementById('question').innerText = `Placeholder (User answer: ${answer || 'N/A'})`;
-    onAnswerChange(answer)
-  };
+      event.preventDefault();
+      const userAnswer = document.getElementById('answer-box')?.value || 'N/A';
+      setUserAnswer(userAnswer);
+      console.log(userAnswer);
+      if(userAnswer.toLowerCase() === answer.toLowerCase()){
+        console.log("correct");
+    }
+  }
 
   return (
     <form className="answer-group" onSubmit={handleSubmit}>
@@ -23,23 +23,15 @@ const Answer = ( {onAnswerChange} ) => {
         id="answer-box"
         type="text"
         placeholder="Type your answer here"
-        value={answer}
-        onChange={handleAnswerChange}
       />
 
 
       <div className='submit-container'>
-        <AwesomeButton id="submit-button" type="primary">
+        <AwesomeButton id="submit-button" type="primary" onPress={handleSubmit}>
           Submit
         </AwesomeButton>
       </div>
 
-      <div className='skip-container'>
-        <AwesomeButton id="skip" type="secondary" >
-          <TrashIcon/>
-          Skip Question
-        </AwesomeButton>
-      </div>
     </form>
   );
 };
