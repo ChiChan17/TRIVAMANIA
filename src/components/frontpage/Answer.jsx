@@ -3,9 +3,20 @@ import './Answer.css';
 import { AwesomeButton } from 'react-awesome-button';
 import 'react-awesome-button/dist/styles.css';
 import { useGlobalState, GlobalStateProvider } from '../../GlobalState';
+import { ToastContainer, toast } from 'react-toastify'; 
+import 'react-toastify/dist/ReactToastify.css';
+
 
 const Answer = () => {
-  const { userAnswer, setUserAnswer, answer, setAnswer} = useGlobalState(); // Destructure global state and functions
+  const { setUserAnswer, answer } = useGlobalState(); // Destructure global state and functions
+
+  const correctAnswer = () => toast(
+    "Correct! Please press next question to proceed!"
+  );
+
+  const incorrectAnswer = () => toast(
+    "Incorrect! Please try again!"
+  );
 
   const handleSubmit = (event) => {
       event.preventDefault();
@@ -14,7 +25,10 @@ const Answer = () => {
       console.log(userAnswer);
       if(userAnswer.toLowerCase() === answer.toLowerCase()){
         console.log("correct");
-    }
+        correctAnswer();
+      } else{
+        incorrectAnswer();
+      }
   }
 
   return (
@@ -30,6 +44,14 @@ const Answer = () => {
         <AwesomeButton id="submit-button" type="primary" onPress={handleSubmit}>
           Submit
         </AwesomeButton>
+
+        <ToastContainer 
+          position="bottom-right"
+          theme="dark"
+          draggable
+          pauseOnHover
+        />
+
       </div>
 
     </form>
