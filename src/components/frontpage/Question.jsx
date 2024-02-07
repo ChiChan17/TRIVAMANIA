@@ -15,6 +15,7 @@ const Question = () => {
   //function to fetch a random question using partner's microservice
   const fetchQuestion = async () => {
     try {
+      //make api call
       const response = await axios.get(`https://cs361-microservices-thanaphon-d7747a32c8c9.herokuapp.com/api/quiz/${globalCategory}/${globalDifficulty}`);
       setQuestion(response.data.question); // update state with fetched question
       setChoices(response.data.incorrect_answers); // update state with incorrect answers
