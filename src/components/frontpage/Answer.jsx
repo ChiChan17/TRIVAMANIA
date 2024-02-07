@@ -6,7 +6,6 @@ import { useGlobalState } from '../../GlobalState';
 import { ToastContainer, toast } from 'react-toastify'; 
 import 'react-toastify/dist/ReactToastify.css';
 
-
 const Answer = () => {
   const { setUserAnswer, answer, score, setScore } = useGlobalState(); // Destructure global state and functions
 
@@ -30,8 +29,9 @@ const Answer = () => {
       } else{
         incorrectAnswer();
       }
-  }
+  } 
 
+  
   return (
     <form className="answer-group" onSubmit={handleSubmit}>
       <input

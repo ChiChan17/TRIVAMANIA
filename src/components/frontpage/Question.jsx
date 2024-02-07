@@ -7,16 +7,10 @@ import arrayShuffle from 'array-shuffle';
 const Question = () => {
   const { setGlobalCategory, setGlobalDifficulty, globalCategory, globalDifficulty, choices, setChoices, answer, setAnswer } = useGlobalState(); // Destructure global state and functions
 
-  // set default category and difficulty when component mounts
-  useEffect(() => {
-    setGlobalCategory('Sports'); // update global category
-    setGlobalDifficulty('easy'); // update global difficulty
-  }, []); 
 
   const [question, setQuestion] = useState(null); // State to store fetched question
   const [answerChoices, setAnswerChoices] = useState([]); //State to store array of possible answers
  
-
 
   //function to fetch a random question using partner's microservice
   const fetchQuestion = async () => {
@@ -34,6 +28,13 @@ const Question = () => {
     }
   };
 
+  //set default categories
+  useEffect(() => {
+      if(globalCategory === '' || globalDifficulty === ''){
+          setGlobalCategory('History')
+          setGlobalDifficulty('easy')
+      }
+  }, [])
 
   useEffect(() => {
     // make API call to fetch question based on global category and difficulty
