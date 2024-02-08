@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import { AwesomeButton } from 'react-awesome-button';
 import 'react-awesome-button/dist/styles.css';
 import { InfoIcon } from "@primer/octicons-react"; // custom icons
 import 'react-responsive-modal/styles.css';
-import { Modal } from 'react-responsive-modal';
+import { Modal } from 'react-responsive-modal'
+import './Info.css'
 
 const Info = () => {
     const [open, setOpen] = useState(false);
@@ -13,7 +13,7 @@ const Info = () => {
   
     return (
       <div>
-        <button onClick={onOpenModal}><InfoIcon/></button>
+        <button id="info" onClick={onOpenModal} ><InfoIcon/></button>
 
         <Modal open={open} onClose={onCloseModal} center>
           <h1>Welcome to the settings page</h1>

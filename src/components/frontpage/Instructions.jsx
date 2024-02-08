@@ -4,6 +4,7 @@ import 'react-awesome-button/dist/styles.css';
 import { InfoIcon } from "@primer/octicons-react"; // custom icons
 import 'react-responsive-modal/styles.css';
 import { Modal } from 'react-responsive-modal';
+import './instruction.css'
 
 const Instructions = () => {
     const [open, setOpen] = useState(false);
@@ -13,7 +14,7 @@ const Instructions = () => {
   
     return (
       <div>
-        <button onClick={onOpenModal}><InfoIcon/></button>
+        <button id="instructions" onClick={onOpenModal}><InfoIcon/></button>
 
         <Modal open={open} onClose={onCloseModal} center>
           <h1>Instructions</h1>

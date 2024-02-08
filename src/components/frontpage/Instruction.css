@@ -1,0 +1,16 @@
+#instructions {
+    display: flex;
+    position: absolute;
+    top: 0; 
+    right: 1; 
+    margin-top: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
