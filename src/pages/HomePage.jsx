@@ -12,7 +12,7 @@ const HomePage = () => {
 
   return (
     <div className = 'homepage'>
-      <ParticlesBg color="#ff0000" type="circle" bg={true}/>
+      <ParticlesBg color="#ff0000" type="square" bg={true} num={10}/>
       <div className='button-container'>
           <Link to="/SettingPage">    
             <AwesomeButton id="settings-button" type="danger">

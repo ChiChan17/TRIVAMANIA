@@ -8,7 +8,6 @@ import './instruction.css'
 
 const Instructions = () => {
     const [open, setOpen] = useState(false);
-
     const onOpenModal = () => setOpen(true);
     const onCloseModal = () => setOpen(false);
   

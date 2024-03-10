@@ -24,9 +24,11 @@ const Answer = () => {
       console.log(userAnswer);
       if(userAnswer.toLowerCase() === answer.toLowerCase()){
         console.log("correct");
+        document.getElementById('answer-box').value = '';
         setScore(score + 1);
         correctAnswer();
       } else{
+        document.getElementById('answer-box').value = '';
         incorrectAnswer();
       }
   } 
