@@ -9,13 +9,13 @@ const Question = () => {
   const { setGlobalCategory, setGlobalDifficulty, globalCategory, globalDifficulty, choices, setChoices, answer, setAnswer } = useGlobalState(); 
   const [question, setQuestion] = useState(null);                 // State to store fetched question
   const [answerChoices, setAnswerChoices] = useState([]);         //State to store array of possible answers
-  const herokuKey = import.meta.env.VITE_REACT_APP_HEROKU_KEY;    //Heroku Key
+  const herokuKey = import.meta.env.VITE_REACT_APP_HEROKU_KEY;    //Heroku Key (Replaced with API)
 
   //function to fetch a random question using partner's microservice
   const fetchQuestion = async () => {
     try {
       //make api call
-      const response = await axios.get(`${herokuKey}${globalCategory}/${globalDifficulty}`);
+      const response = await axios.get(`$http://localhost:5173/${globalCategory}/${globalDifficulty}`);
       console.log("Fetch request has been made!")
       
       setQuestion(response.data.question);                       // update global state with fetched question
@@ -39,8 +39,7 @@ const Question = () => {
   }, [])
 
   useEffect(() => {
-    // make API call to fetch question based on global category and difficulty
-    fetchQuestion(); // call fetchQuestion function when globalCategory or globalDifficulty changes
+    fetchQuestion();                                            // call fetchQuestion function when globalCategory or globalDifficulty changes
   }, [globalCategory, globalDifficulty]); 
 
 
